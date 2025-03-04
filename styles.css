@@ -1,0 +1,251 @@
+:root {  
+  --darkreader-neutral-text: var(--darkreader-text, #e8e6e3);
+  --darkreader-background: #1e2021;
+  --darkreader-sidebar-background: #181818;
+  --darkreader-text: #e8e6e3;
+  --darkreader-border: #736b5e;
+  
+  --lightreader-neutral-text: var(--darkreader-text, #e8e6e3);
+  --lightreader-background: #f5f5f5;;
+  --lightreader-text: #000;
+  --lightreader-border: #4c4c4c;
+}
+
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #1c39bb, #1c39bb8e);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #1c39bb, #1c39bb8e);
+  cursor: pointer;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff00;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-corner {
+  background: #ffffff00;
+}
+
+
+
+
+body {
+    /* background-color: #f5f5f5; */
+    margin: 0;
+    font-family: Vazir FD, sans-serif;
+    direction: rtl;
+    height: 100vh;
+    overflow: hidden;
+    /* padding: 8px; */
+}
+
+.kashkul-template{
+  display: block;
+  width: 100%;
+  /* grid-template-columns: 250px calc(100% - 250px); */
+  position: relative;
+}
+
+.kashkul-template img{
+  border-radius: 5px;
+}
+
+.kashkul-template p{
+  text-indent: 20px;
+  text-align: justify;
+}
+
+.kashkul-template:not(.dark) #darkMode {
+  color: #0826ac;
+}
+
+.kashkul-template #darkMode {
+  position: fixed;
+  left: 2rem;
+  bottom: 1.5rem;
+  /* width: 32px;
+  height: 32px; */
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.kashkul-template .navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+}
+
+.kashkul-template .navbar .active {
+  font-weight: bold;
+  color: #1c39bb;
+  border-bottom: 2px solid #1c39bb;
+}
+
+.kashkul-template .navbar ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  gap: 30px;
+}
+
+.kashkul-template .navbar ul li {
+  margin-bottom: 10px;
+}
+
+.kashkul-template .navbar ul li a {
+  text-decoration: none;
+  /* color: #333; */
+  color: var(--lightreader-text, #333);
+}
+
+.kashkul-template .navbar ul li a:hover {
+  color: #007bff;
+}
+
+.kashkul-template .sidebar {
+  width: 250px;
+  height: 100vh;
+  /* background-color: #f4f4f4; */
+  position: absolute;
+  overflow: hidden;
+  overflow-y: scroll;
+  z-index: 10;
+}
+
+.kashkul-template .sidebar a {
+  width: calc(100% - 2px);
+  display: block;
+  padding-right: 20px;
+  border-right: 3px solid transparent;
+}
+
+.kashkul-template .sidebar .active {
+  font-weight: bold;
+  color: #1c39bb;
+  border-right: 3px solid #1c39bb;
+}
+
+.kashkul-template .sidebar .container {
+  position: sticky;
+  min-height: 100vh;
+  /* top: 28px; */
+  padding: 20px 0;
+  padding-left: 0;
+  box-sizing: border-box;
+  border-left: 1px solid #ddd; 
+}
+
+.kashkul-template .sidebar .topside {
+  text-align: center;
+}
+
+.kashkul-template .sidebar .topside h2 {
+  margin-top: 0;
+}
+
+.kashkul-template .sidebar .topside .logo {
+  margin-top: 20px;
+  text-align: center;
+}
+.kashkul-template .sidebar .topside .logo img{
+  width: 100px;
+  height: 100px;
+}
+
+.kashkul-template .sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.kashkul-template .sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.kashkul-template .sidebar ul li a {
+  text-decoration: none;
+  color: var(--lightreader-text, #333);
+}
+
+.kashkul-template .sidebar ul li a:hover {
+  color: #007bff;
+}
+
+
+.kashkul-template .markdown-container{
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-right: 250px;
+}
+
+.kashkul-template main {
+  direction: rtl;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.kashkul-template img{
+  width: 100%;
+}
+
+.kashkul-template ol{
+  list-style-type: persian;
+}
+  
+
+/* custom poet style */
+.poet {
+  max-width: fit-content;
+  justify-self: center;
+}
+
+.stanza{
+  width: 225px;
+  height: 32px;
+  text-align: justify !important;
+  display: inline-block;
+}
+
+.stanza:after {
+  content: "";
+  display: inline-block;
+  width: 100%;	
+}
+
+
+.kashkul-template footer{
+  padding: 20px;
+}
+
+
+body .dark{
+  color-scheme: dark !important;
+  border-color: var(--darkreader-border, #736b5e);
+  color: var(--darkreader-text, #e8e6e3);
+  background-color: var(--darkreader-background, #1e2021);
+}
+
+.kashkul-template.dark .sidebar{
+  background-color: var(--darkreader-sidebar-background, #333);
+}
+.kashkul-template.dark .sidebar .container {
+  border-left: 1px solid var(--darkreader-sidebar-background, #333);; 
+}
+
+body .dark ul li a {
+  text-decoration: none;
+  color: var(--darkreader-text, #333) !important;
+}
