@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const isNode = typeof window === 'undefined';
@@ -17,6 +17,7 @@ function parseLinksToObjects(text) {
 
 const Navbar = ({ navbar = "", path = null }) => {
     const docsList = parseLinksToObjects(navbar);
+    const [sideOpened, setSide] = useState(false)
     let location = null; // Get the current path
     let isActive = false;
 
@@ -24,7 +25,13 @@ const Navbar = ({ navbar = "", path = null }) => {
     return (
         <div className="navbar">
             <div className="container">
-                <div className='navlogo'></div>
+                <div onClick={()=>setSide(!sideOpened)} 
+                    className={`navBurger ${(sideOpened)&&"opened"}`}
+                >
+                        <i class="fa fa-bars"></i>
+                        <i class="fas fa-angle-right"></i>
+                </div>
+                <span></span>
                 <ul>
                     {docsList.map((doc, index) => {
                         if(!isNode) isActive = location.pathname === `/${doc.path}`;

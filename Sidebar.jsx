@@ -26,10 +26,11 @@ const Sidebar = ({ sidebar = "", path = null }) => {
     return (
         <div className="sidebar">
             <div className="container">
+                {/* <div><i class="fas fa-angle-right"></i></div> */}
                 <div className='topside'>
                     <div className='logo'><img src={LOGO} alt='irantl'/>
                     </div>
-                    <h2>گاه‌شمار ایران</h2>
+                    <h2>گاه‌شـمار ایـران</h2>
                 </div>
                 <ul>
                     {docsList.map((doc, index) => {
